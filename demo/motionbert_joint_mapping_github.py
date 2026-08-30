@@ -60,17 +60,8 @@ def mediapipe_to_h36m(landmarks):
     return h36m
 
 
-# Step 2 (after MotionBERT): H36M 17 -> HIT605 17
-# Your HIT605-trained BiLSTM expects THIS order (validated earlier via
-# the bone-length CV% check - confirmed correct):
-#   0 Pelvis, 1 RHip, 2 RKnee, 3 RAnkle, 4 LHip, 5 LKnee, 6 LAnkle,
-#   7 Spine, 8 Neck, 9 Head, 10 LShoulder, 11 LElbow, 12 LWrist,
-#   13 RShoulder, 14 RElbow, 15 RWrist, 16 Chest
-#
-# This is almost IDENTICAL to H36M order (indices 0-9 match exactly in
-# meaning), just shifted after that, plus HIT605 has one extra joint
-# (Chest) that H36M doesn't have - we synthesize it as the shoulder
-# midpoint, same way your original extract_17_joints already did.
+# Step 2: H36M 17 -> HIT605 17 (Chest joint synthesized as shoulder midpoint)
+
 def h36m_to_hit605(h36m_joints):
     """
     h36m_joints: (T, 17, 3) - MotionBERT's 3D output for a sequence.
@@ -101,8 +92,7 @@ def h36m_to_hit605(h36m_joints):
     return out
 
 
-# Quick self-test (no MotionBERT needed) - verifies the mapping logic
-# runs without error and produces sane shapes.
+# Quick self-test (no MotionBERT needed) 
 if __name__ == "__main__":
     class FakeLandmark:
         def __init__(self, x, y, v=1.0):
