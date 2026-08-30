@@ -276,7 +276,7 @@ def run_training(model, train_loader, test_loader, model_name="stgcn"):
 
     history = {"train_loss": [], "train_acc": [], "test_acc": [], "test_f1": []}
     best_f1  = 0
-    save_path = os.path.join(r"path to TaiChi dataset", f"best_{model_name}.pth")
+    save_path = os.path.join(r"path to save model", f"best_{model_name}.pth")
 
     print(f"\nTraining: {model_name}")
     print(f"   Parameters: {sum(p.numel() for p in model.parameters()):,}")
