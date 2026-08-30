@@ -48,14 +48,6 @@ Trained model checkpoints:
   fine-tuned on real recorded video (demo pipeline only, not used
   for the paper's reported results)
 
-
-DATASET
-
-HIT605 TaiChi Action dataset (Xu et al., 2020; Yuan et al., 2023).
-Download link:
-https://drive.google.com/drive/folders/1_DV3uQmZJuITN0sEguVWux3tXSyLqNLW?usp=sharing
-
-
 DEMO (additional, not part of the written report)
 
 This folder contains an extra pipeline we built to test the trained
