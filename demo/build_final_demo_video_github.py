@@ -16,11 +16,11 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from motionbert_joint_mapping import h36m_to_hit605
 
 # Config
-# change your path
+
 MOTIONBERT_OUTPUTS = r"path to MotionBERT outputs (from run_all_motionbert.ps1)"
-# change your path
+
 MODEL_PATH          = r"path to fine-tuned model checkpoint"
-# change your path
+
 OUTPUT_PATH          = r"path to save final demo video"
 
 WINDOW_SIZE  = 64
