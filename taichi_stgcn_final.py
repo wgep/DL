@@ -29,7 +29,7 @@ torch.backends.cudnn.benchmark = False
 
 # Config
 
-BASE_DIR    = r"C:\Users\lkorn\Documents\Deep Learning\Project\TaiChi.tar\TaiChi"
+BASE_DIR    = r"path to TaiChi dataset"
 FEATURE_DIR = os.path.join(BASE_DIR, "feature")
 LABEL_DIR   = os.path.join(BASE_DIR, "label")
 TRAIN_LIST  = os.path.join(BASE_DIR, "split1", "train.txt")
@@ -276,7 +276,7 @@ def run_training(model, train_loader, test_loader, model_name="stgcn"):
 
     history = {"train_loss": [], "train_acc": [], "test_acc": [], "test_f1": []}
     best_f1  = 0
-    save_path = os.path.join(r"C:\Users\lkorn\Documents\Deep Learning\Project", f"best_{model_name}.pth")
+    save_path = os.path.join(r"path to TaiChi dataset", f"best_{model_name}.pth")
 
     print(f"\nTraining: {model_name}")
     print(f"   Parameters: {sum(p.numel() for p in model.parameters()):,}")
