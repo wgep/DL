@@ -10,6 +10,7 @@ Deep Learning and Decision Making, TUM, Summer Semester 2026
 REPOSITORY STRUCTURE
 
 DL/
+
   main code/   - Core code: train the two models reported in our paper
   images/      - Figures used in the written report
   videos/      - Reference videos for each Tai Chi movement
