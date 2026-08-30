@@ -12,9 +12,13 @@ REPOSITORY STRUCTURE
 DL/
 
   main code/   - Core code: train the two models reported in our paper
+  
   images/      - Figures used in the written report
+ 
   videos/      - Reference videos for each Tai Chi movement
+  
   demo/        - Additional real-video demo pipeline (not part of the paper)
+  
   output/      - Trained model checkpoints
 
 
