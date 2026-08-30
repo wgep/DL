@@ -22,11 +22,11 @@ np.random.seed(42)
 torch.manual_seed(42)
 
 # Config
-# change your path
+
 MOTIONBERT_OUTPUTS = r"path to MotionBERT outputs (from run_all_motionbert.ps1)"
-# change your path
+
 STARTING_MODEL      = r"path to starting model checkpoint"
-# change your path
+
 SAVE_PATH            = r"path to save fine-tuned model"
 
 WINDOW_SIZE  = 64
@@ -203,9 +203,8 @@ def main():
     train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
     val_loader   = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=False)
 
-    # Compute class weights to counter the imbalance we saw (e.g.
-    # 04_lift_hand had 343 train windows, 07_hold_lute only 32 - without
-    # weighting, the model barely learns the sparse classes).
+    # Compute class weights to counter the imbalance we saw 
+    
     train_labels = [label for _, label in train_dataset.windows]
     class_counts = np.zeros(NUM_CLASSES)
     for label in train_labels:
