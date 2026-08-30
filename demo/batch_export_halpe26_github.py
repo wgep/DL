@@ -12,12 +12,12 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from mediapipe_to_halpe26_json import build_alphapose_json
 
-# Config - EDIT THESE PATHS
-# change your path
+# Config 
+
 VIDEOS_FOLDER = r"path to your recorded videos folder"
-# change your path
+
 MODEL_FILE    = r"path to pose_landmarker_full.task"
-# change your path
+
 OUT_FOLDER    = r"path to save exported JSON files"
 
 VIDEO_FILES = [
