@@ -72,9 +72,21 @@ our presentation video but is NOT part of the formal written report.
 - build_final_demo_video.py - builds the demo video shown in our
   presentation
 
-See demo/README_real_video_pipeline.md for full setup instructions
-and demo/RUN_ORDER.md for the exact run sequence.
+Run order:
+1. batch_export_halpe26.py (normal Python env, needs mediapipe/opencv)
+   -> produces Halpe26 JSON files from your recorded videos
+2. run_all_motionbert.ps1 (inside a MotionBERT install + its own venv)
+   -> produces X3D.npy 3D pose output for each video (slow, 1-3 hours)
+3. finetune_on_real_videos.py (normal Python env)
+   -> fine-tunes the model on the real-video data
+4. test_finetuned_all_videos.py
+   -> reports final per-video accuracy
+5. build_final_demo_video.py
+   -> builds the demo video shown in our presentation
 
+Note: running this pipeline requires MotionBERT installed separately
+(https://github.com/Walter0807/MotionBERT), which is not included in
+this repo.
 
 IMAGES
 
